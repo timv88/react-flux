@@ -66,6 +66,10 @@ var AppStore = assign(EventEmitter.prototype, {
         return _catalog;
     },
 
+    cartIsEmpty: function() {
+        return _cartItems.length === 0 ? true : false;
+    },
+
     dispatcherIndex:AppDispatcher.register(function(payload) {
         var action = payload.action;
         switch(action.actionType) {

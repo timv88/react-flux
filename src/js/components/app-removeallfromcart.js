@@ -3,6 +3,16 @@ var AppActions = require('../actions/app-actions.js');
 var AppStore = require('../stores/app-store.js');
 
 var RemoveAllFromCart = React.createClass({
+
+    componentWillMount: function() {
+        AppStore.addChangeListener(this._onChange);
+    },
+
+    _onChange: function() {
+        console.log("smth changed");
+        this.render();
+    },
+
     handleClick: function(item) {
         var all = AppStore.getCart();
         var allIndexes = [];
@@ -13,8 +23,10 @@ var RemoveAllFromCart = React.createClass({
         }
         AppActions.removeItems(allIndexes);
     },
+
     render: function() {
-        return <button onClick={this.handleClick}>Empty cart</button>
+        var maybeDisabled = AppStore.cartIsEmpty() ? "disabled" : "";
+        return <button onClick={this.handleClick} disabled={maybeDisabled}>Clear cart</button>
     }
 });
 

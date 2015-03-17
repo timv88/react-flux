@@ -62,7 +62,7 @@ var Cart = React.createClass({
                         <td>${total}</td>
                     </tr>
                     <tr>
-                        <td colSpan="5">{items.length > 0 ? <RemoveAllFromCart /> : ''}</td>
+                        <td colSpan="5"><RemoveAllFromCart/></td>
                     </tr>
                 </tfoot>
             </table>
