@@ -26,9 +26,10 @@ var Cart = React.createClass({
         var total = 0;
         var items = this.state.items.map(function(item, i) {
             var subtotal = item.cost * item.qty;
+            var indexAttr = "id-" + i;
             total += subtotal;
             return (
-                <tr key={i}>
+                <tr key={i} data-index={indexAttr}>
                     <td><RemoveFromCart index={i} /></td>
                     <td>{item.title}</td>
                     <td>{item.qty}</td>
