@@ -3,6 +3,7 @@ var AppStore = require('../stores/app-store.js');
 var RemoveFromCart = require('../components/app-removefromcart.js');
 var Increase = require('../components/app-increase.js');
 var Decrease = require('../components/app-decrease.js');
+var RemoveAllFromCart = require('../components/app-removeallfromcart.js');
 
 function cartItems() {
     return {items: AppStore.getCart()}
@@ -59,6 +60,9 @@ var Cart = React.createClass({
                     <tr>
                         <td colSpan="4" className="text-right">Total</td>
                         <td>${total}</td>
+                    </tr>
+                    <tr>
+                        <td colSpan="5">{items.length > 0 ? <RemoveAllFromCart /> : ''}</td>
                     </tr>
                 </tfoot>
             </table>
