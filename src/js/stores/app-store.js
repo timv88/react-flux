@@ -70,6 +70,16 @@ var AppStore = assign(EventEmitter.prototype, {
         return _cartItems.length === 0 ? true : false;
     },
 
+    getCartItemCount: function() {
+        var total = 0;
+
+        _cartItems.forEach(function(item) {
+            total += item.qty;
+        });
+
+        return total;
+    },
+
     dispatcherIndex:AppDispatcher.register(function(payload) {
         var action = payload.action;
         switch(action.actionType) {

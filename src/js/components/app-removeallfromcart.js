@@ -9,7 +9,6 @@ var RemoveAllFromCart = React.createClass({
     },
 
     _onChange: function() {
-        console.log("smth changed");
         this.render();
     },
 

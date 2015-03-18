@@ -9,6 +9,10 @@ function cartItems() {
     return {items: AppStore.getCart()}
 }
 
+function getTotalItems() {
+    // find best practice for svg, incl updating custom data-attribute
+}
+
 var Cart = React.createClass({
 
     getInitialState: function() {
