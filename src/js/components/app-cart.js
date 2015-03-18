@@ -4,6 +4,7 @@ var RemoveFromCart = require('../components/app-removefromcart.js');
 var Increase = require('../components/app-increase.js');
 var Decrease = require('../components/app-decrease.js');
 var RemoveAllFromCart = require('../components/app-removeallfromcart.js');
+var ButtonToolbar = require('react-bootstrap').ButtonToolbar;
 
 function cartItems() {
     return {items: AppStore.getCart()}
@@ -39,8 +40,10 @@ var Cart = React.createClass({
                     <td>{item.title}</td>
                     <td>{item.qty}</td>
                     <td>
-                        <Increase index={i} />
-                        <Decrease index={i} />
+                        <ButtonToolbar>
+                            <Increase index={i} />
+                            <Decrease index={i} />
+                        </ButtonToolbar>
                     </td>
                     <td>${subtotal}</td>
                 </tr>

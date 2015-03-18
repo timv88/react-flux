@@ -1,6 +1,7 @@
 var React = require('react');
 var AppActions = require('../actions/app-actions.js');
 var AppStore = require('../stores/app-store.js');
+var Button = require('react-bootstrap').Button;
 
 var RemoveAllFromCart = React.createClass({
 
@@ -25,7 +26,7 @@ var RemoveAllFromCart = React.createClass({
 
     render: function() {
         var maybeDisabled = AppStore.cartIsEmpty() ? "disabled" : "";
-        return <button onClick={this.handleClick} disabled={maybeDisabled}>Clear cart</button>
+        return <Button bsStyle="danger" bsSize="small" onClick={this.handleClick} disabled={maybeDisabled}>Clear cart</Button>
     }
 });
 

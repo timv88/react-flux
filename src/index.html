@@ -3,44 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <style type="text/css">
-        * { 
-            box-sizing: border-box;
-        }
-
-        button[disabled] {
-            opacity: .5;
-        }
-
-        .shopping-cart-icon {
-            position: relative;
-            width: 50px;
-            height: 50px;
-            float: right;
-            margin: 10px;
-        }
-        .shopping-cart-icon[data-icon-count]:after {
-            content: attr(data-icon-count);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: red;
-            color: #FFF;
-            display: inline-block;
-            position: absolute;
-            line-height: 20px;
-            text-align: center;
-            top: 0;
-            left: 21px;
-            font-weight: bold;
-            transform: rotate(10deg);
-        }
-
-        .shopping-cart-icon[data-icon-count="0"]:after {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--[if lt IE 9]>
+    <script>
+      (function(){
+        var ef = function(){};
+        window.console = window.console || {log:ef,warn:ef,error:ef,dir:ef};
+      }());
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-sham.js"></script>
+    <![endif]-->
 </head>
 
 <body>
@@ -58,6 +36,15 @@
 
         View 
             React components
+
+
+        State
+            State should contain data that a component's event handlers may change to trigger a UI update.
+
+            It should not contain
+            - Computed data (do all your computation in render())
+            - React components (build them in render())
+            - Duplicated data from props (One valid use to store props in state is to be able to know its previous values)
     -->
     
 

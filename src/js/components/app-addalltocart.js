@@ -1,6 +1,7 @@
 var React = require('react');
 var AppActions = require('../actions/app-actions.js');
 var AppStore = require('../stores/app-store.js');
+var Button = require('react-bootstrap').Button;
 
 var AddAllToCart = React.createClass({
     handleClick: function() {
@@ -8,7 +9,7 @@ var AddAllToCart = React.createClass({
         AppActions.addItems( all );
     },
     render: function() {
-        return <button onClick={this.handleClick}>Add all</button>
+        return <Button bsStyle="primary" bsSize="small" onClick={this.handleClick}>Add all</Button>
     }
 });
 
